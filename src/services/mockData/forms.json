@@ -1,0 +1,143 @@
+[
+  {
+    "Id": 1,
+    "id": "1",
+    "title": "Customer Feedback Survey",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-16T14:30:00Z",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "text",
+        "text": "What's your name?",
+        "helpText": "Please enter your full name",
+        "required": true,
+        "options": [],
+        "validation": {}
+      },
+      {
+        "id": "q2", 
+        "type": "email",
+        "text": "What's your email address?",
+        "helpText": "We'll use this to follow up on your feedback",
+        "required": true,
+        "options": [],
+        "validation": {}
+      },
+      {
+        "id": "q3",
+        "type": "rating",
+        "text": "How would you rate our service?",
+        "helpText": "5 stars = excellent, 1 star = poor",
+        "required": true,
+        "options": ["1", "2", "3", "4", "5"],
+        "validation": {}
+      },
+      {
+        "id": "q4",
+        "type": "multiple_choice",
+        "text": "What's your main reason for using our service?",
+        "helpText": "",
+        "required": false,
+        "options": ["Price", "Quality", "Customer support", "Features", "Recommendation"],
+        "validation": {}
+      },
+      {
+        "id": "q5",
+        "type": "textarea",
+        "text": "Any additional feedback or suggestions?",
+        "helpText": "Tell us what we can improve or what you loved most",
+        "required": false,
+        "options": [],
+        "validation": {}
+      }
+    ],
+    "settings": {
+      "thankYouMessage": "Thank you for your valuable feedback!",
+      "redirectUrl": "",
+      "allowMultipleSubmissions": false
+    }
+  },
+  {
+    "Id": 2,
+    "id": "2",
+    "title": "Event Registration Form",
+    "createdAt": "2024-01-10T09:00:00Z",
+    "updatedAt": "2024-01-12T16:15:00Z",
+    "questions": [
+      {
+        "id": "q6",
+        "type": "text",
+        "text": "What's your full name?",
+        "helpText": "",
+        "required": true,
+        "options": [],
+        "validation": {}
+      },
+      {
+        "id": "q7",
+        "type": "email",
+        "text": "Email address for confirmation",
+        "helpText": "We'll send your event ticket here",
+        "required": true,
+        "options": [],
+        "validation": {}
+      },
+      {
+        "id": "q8",
+        "type": "multiple_choice",
+        "text": "Which session are you most interested in?",
+        "helpText": "",
+        "required": true,
+        "options": ["Marketing Strategies", "Product Development", "Team Leadership", "Financial Planning"],
+        "validation": {}
+      },
+      {
+        "id": "q9",
+        "type": "number",
+        "text": "How many years of experience do you have?",
+        "helpText": "This helps us tailor the content to your level",
+        "required": false,
+        "options": [],
+        "validation": {"min": 0, "max": 50}
+      }
+    ],
+    "settings": {
+      "thankYouMessage": "Registration successful! Check your email for the event ticket.",
+      "redirectUrl": "",
+      "allowMultipleSubmissions": false
+    }
+  },
+  {
+    "Id": 3,
+    "id": "3",
+    "title": "Product Interest Survey",
+    "createdAt": "2024-01-08T11:30:00Z",
+    "updatedAt": "2024-01-08T11:30:00Z",
+    "questions": [
+      {
+        "id": "q10",
+        "type": "multiple_choice",
+        "text": "Which product category interests you most?",
+        "helpText": "",
+        "required": true,
+        "options": ["Software Tools", "Hardware Devices", "Online Services", "Educational Content"],
+        "validation": {}
+      },
+      {
+        "id": "q11",
+        "type": "rating",
+        "text": "How likely are you to recommend us to a friend?",
+        "helpText": "Net Promoter Score question",
+        "required": true,
+        "options": ["1", "2", "3", "4", "5"],
+        "validation": {}
+      }
+    ],
+    "settings": {
+      "thankYouMessage": "Thanks for letting us know your interests!",
+      "redirectUrl": "",
+      "allowMultipleSubmissions": true
+    }
+  }
+]

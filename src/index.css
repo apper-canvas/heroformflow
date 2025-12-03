@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Toast Styling */
+.Toastify__toast-container {
+  @apply text-sm font-medium;
+}
+
+.Toastify__toast {
+  @apply rounded-lg shadow-lg;
+  min-height: 64px;
+  padding: 16px 20px;
+}
+
+.Toastify__toast--success {
+  @apply bg-white border-l-4 border-success text-gray-800;
+}
+
+.Toastify__toast--error {
+  @apply bg-white border-l-4 border-error text-gray-800;
+}
+
+.Toastify__toast--info {
+  @apply bg-white border-l-4 border-info text-gray-800;
+}
+
+.Toastify__toast--warning {
+  @apply bg-white border-l-4 border-warning text-gray-800;
+}
+
+.Toastify__progress-bar {
+  @apply bg-gradient-to-r from-primary to-accent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-success {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-pulse-success {
+  animation: pulse-success 0.5s ease-out;
+}
+
+/* Form Styling */
+.floating-label {
+  @apply absolute left-3 -top-2 px-1 bg-white text-xs font-medium text-primary transition-all duration-200;
+}
+
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label {
+  @apply -top-2 text-xs text-primary;
+}
+
+/* Question Card Styling */
+.question-card {
+  @apply bg-white rounded-md shadow-card hover:shadow-hover transition-all duration-200;
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+}
+
+.question-card.active {
+  @apply border-2 border-primary shadow-hover;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  @apply bg-gradient-to-r from-primary to-accent;
+  transition: width 0.3s ease-out;
+}

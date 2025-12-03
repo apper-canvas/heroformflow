@@ -1,0 +1,91 @@
+[
+  {
+    "Id": 1,
+    "id": "1",
+    "formId": "1",
+    "submittedAt": "2024-01-16T09:30:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q1", "value": "John Smith"},
+      {"questionId": "q2", "value": "john.smith@email.com"},
+      {"questionId": "q3", "value": "5"},
+      {"questionId": "q4", "value": "Quality"},
+      {"questionId": "q5", "value": "Great service, very responsive customer support team!"}
+    ]
+  },
+  {
+    "Id": 2,
+    "id": "2",
+    "formId": "1",
+    "submittedAt": "2024-01-16T11:15:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q1", "value": "Sarah Johnson"},
+      {"questionId": "q2", "value": "sarah.johnson@example.com"},
+      {"questionId": "q3", "value": "4"},
+      {"questionId": "q4", "value": "Price"},
+      {"questionId": "q5", "value": "Good value for money, could use more features"}
+    ]
+  },
+  {
+    "Id": 3,
+    "id": "3",
+    "formId": "1",
+    "submittedAt": "2024-01-16T14:45:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q1", "value": "Mike Chen"},
+      {"questionId": "q2", "value": "mike.chen@company.com"},
+      {"questionId": "q3", "value": "3"},
+      {"questionId": "q4", "value": "Recommendation"},
+      {"questionId": "q5", "value": "It's okay, but the interface could be more intuitive"}
+    ]
+  },
+  {
+    "Id": 4,
+    "id": "4",
+    "formId": "2",
+    "submittedAt": "2024-01-12T10:20:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q6", "value": "Emily Rodriguez"},
+      {"questionId": "q7", "value": "emily.r@startup.io"},
+      {"questionId": "q8", "value": "Marketing Strategies"},
+      {"questionId": "q9", "value": "3"}
+    ]
+  },
+  {
+    "Id": 5,
+    "id": "5",
+    "formId": "2",
+    "submittedAt": "2024-01-12T13:30:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q6", "value": "David Thompson"},
+      {"questionId": "q7", "value": "d.thompson@techcorp.com"},
+      {"questionId": "q8", "value": "Product Development"},
+      {"questionId": "q9", "value": "8"}
+    ]
+  },
+  {
+    "Id": 6,
+    "id": "6",
+    "formId": "3",
+    "submittedAt": "2024-01-08T15:00:00Z",
+    "completed": true,
+    "answers": [
+      {"questionId": "q10", "value": "Software Tools"},
+      {"questionId": "q11", "value": "4"}
+    ]
+  },
+  {
+    "Id": 7,
+    "id": "7",
+    "formId": "3",
+    "submittedAt": "2024-01-08T16:20:00Z",
+    "completed": false,
+    "answers": [
+      {"questionId": "q10", "value": "Online Services"}
+    ]
+  }
+]
