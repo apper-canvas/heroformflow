@@ -101,6 +101,11 @@ const LogicBuilder = ({ form, onUpdateForm }) => {
 
 const getAvailableTargetQuestions = (currentQuestionId) => {
     const currentIndex = form.questions.findIndex(q => q.id === currentQuestionId)
+    
+    // Return empty array if current question not found or is first question
+    if (currentIndex <= 0) return []
+    
+    // Get all questions before the current question and map to dropdown format
     return form.questions.slice(0, currentIndex).map((q, index) => ({
       value: q.id,
       label: `Q${index + 1}: ${q.text || 'Untitled Question'}`
