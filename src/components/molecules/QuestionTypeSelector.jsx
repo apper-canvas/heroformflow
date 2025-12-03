@@ -5,7 +5,7 @@ import Card from "@/components/atoms/Card";
 import { cn } from "@/utils/cn";
 
 const QuestionTypeSelector = ({ onSelect, onClose }) => {
-  const questionTypes = [
+const questionTypes = [
     { 
       id: "text", 
       label: "Short Text", 
@@ -47,6 +47,41 @@ const QuestionTypeSelector = ({ onSelect, onClose }) => {
       icon: "Star", 
       description: "Star rating scale",
       color: "text-yellow-600" 
+    },
+    { 
+      id: "rating_star", 
+      label: "Star Rating", 
+      icon: "Star", 
+      description: "Interactive star rating (1-5)",
+      color: "text-indigo-600" 
+    },
+    { 
+      id: "rating_numeric", 
+      label: "Numeric Rating", 
+      icon: "Hash", 
+      description: "Number-based rating scale",
+      color: "text-teal-600" 
+    },
+    { 
+      id: "rating_slider", 
+      label: "Slider Scale", 
+      icon: "Sliders", 
+      description: "Sliding scale rating input",
+      color: "text-pink-600" 
+    },
+    { 
+      id: "date", 
+      label: "Date Picker", 
+      icon: "Calendar", 
+      description: "Date selection input",
+      color: "text-cyan-600" 
+    },
+    { 
+      id: "time", 
+      label: "Time Picker", 
+      icon: "Clock", 
+      description: "Time selection input",
+      color: "text-violet-600" 
     }
   ]
 
