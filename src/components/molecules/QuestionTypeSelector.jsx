@@ -2,7 +2,7 @@ import React from "react";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Card from "@/components/atoms/Card";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 const QuestionTypeSelector = ({ onSelect, onClose }) => {
   const questionTypes = [
