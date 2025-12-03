@@ -30,6 +30,10 @@ const mainRoutes = [
     element: <Suspense fallback={suspenseFallback}><FormBuilderPage /></Suspense>
   },
   {
+    path: "form/:formId/logic",
+    element: <Suspense fallback={suspenseFallback}><FormBuilderPage /></Suspense>
+  },
+  {
     path: "form/:formId/responses",
     element: <Suspense fallback={suspenseFallback}><FormResponsesPage /></Suspense>
   },

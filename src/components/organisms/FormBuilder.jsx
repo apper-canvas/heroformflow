@@ -5,6 +5,7 @@ import Card from "@/components/atoms/Card"
 import QuestionCard from "@/components/molecules/QuestionCard"
 import QuestionTypeSelector from "@/components/molecules/QuestionTypeSelector"
 import QuestionEditor from "@/components/organisms/QuestionEditor"
+import LogicBuilder from "@/components/organisms/LogicBuilder"
 import Empty from "@/components/ui/Empty"
 import { toast } from "react-toastify"
 
@@ -12,7 +13,7 @@ const FormBuilder = ({ form, onUpdateForm }) => {
   const [showTypeSelector, setShowTypeSelector] = useState(false)
   const [selectedQuestion, setSelectedQuestion] = useState(null)
   const [showEditor, setShowEditor] = useState(false)
-
+  const [showLogicBuilder, setShowLogicBuilder] = useState(false)
   // Auto-select first question when form loads
   useEffect(() => {
     if (form?.questions && form.questions.length > 0 && !selectedQuestion) {
@@ -20,7 +21,7 @@ const FormBuilder = ({ form, onUpdateForm }) => {
     }
   }, [form?.questions, selectedQuestion])
 
-  const handleAddQuestion = (type) => {
+const handleAddQuestion = (type) => {
     const newQuestion = {
       id: Date.now().toString(),
       type,
@@ -28,7 +29,8 @@ const FormBuilder = ({ form, onUpdateForm }) => {
       helpText: "",
       required: false,
       options: type === "multiple_choice" || type === "rating" ? ["Option 1"] : [],
-      validation: {}
+      validation: {},
+      conditionalLogic: []
     }
 
     const updatedQuestions = [...(form?.questions || []), newQuestion]
@@ -44,7 +46,7 @@ const FormBuilder = ({ form, onUpdateForm }) => {
     toast.success("Question added!")
   }
 
-  const handleQuestionUpdate = (updatedQuestion) => {
+const handleQuestionUpdate = (updatedQuestion) => {
     const updatedQuestions = form.questions.map(q => 
       q.id === updatedQuestion.id ? updatedQuestion : q
     )
@@ -58,6 +60,11 @@ const FormBuilder = ({ form, onUpdateForm }) => {
     setSelectedQuestion(updatedQuestion)
   }
 
+  const handleLogicBuilderToggle = () => {
+    setShowLogicBuilder(!showLogicBuilder)
+    setShowEditor(false)
+    setSelectedQuestion(null)
+  }
   const handleDeleteQuestion = (questionId) => {
     const updatedQuestions = form.questions.filter(q => q.id !== questionId)
     onUpdateForm({
@@ -181,8 +188,13 @@ const FormBuilder = ({ form, onUpdateForm }) => {
       </div>
 
       {/* Right Panel - Question Editor */}
-      <div className="flex-1 flex">
-        {showEditor && selectedQuestion ? (
+<div className="flex-1 flex">
+        {showLogicBuilder ? (
+          <LogicBuilder
+            form={form}
+            onUpdateForm={onUpdateForm}
+          />
+        ) : showEditor && selectedQuestion ? (
           <QuestionEditor
             question={selectedQuestion}
             onUpdate={handleQuestionUpdate}
