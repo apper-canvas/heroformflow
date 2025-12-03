@@ -99,11 +99,11 @@ const LogicBuilder = ({ form, onUpdateForm }) => {
     return question ? question.text : questionId
   }
 
-  const getAvailableTargetQuestions = (currentQuestionId) => {
+const getAvailableTargetQuestions = (currentQuestionId) => {
     const currentIndex = form.questions.findIndex(q => q.id === currentQuestionId)
-    return form.questions.slice(0, currentIndex).map(q => ({
+    return form.questions.slice(0, currentIndex).map((q, index) => ({
       value: q.id,
-      label: q.text || q.id
+      label: `Q${index + 1}: ${q.text || 'Untitled Question'}`
     }))
   }
 
@@ -155,7 +155,7 @@ const LogicBuilder = ({ form, onUpdateForm }) => {
             </div>
 
             <div className="space-y-4">
-              <FormField
+<FormField
                 label="When Question"
                 type="select"
                 value={editedRule.targetQuestionId}
@@ -165,7 +165,8 @@ const LogicBuilder = ({ form, onUpdateForm }) => {
                   targetValue: '' 
                 }))}
                 options={availableTargets}
-                placeholder="Select a previous question"
+                placeholder={availableTargets.length > 0 ? "Choose which question triggers this logic" : "No previous questions available"}
+                required
               />
 
               <FormField
